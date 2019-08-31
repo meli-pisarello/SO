@@ -1,0 +1,21 @@
+mi primer script
+vie ago 23 15:40:29 -03 2019
+Linux administrador-All-Series 4.4.0-116-generic #140-Ubuntu SMP Mon Feb 12 21:23:04 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+espacio en disco
+S.ficheros     Tamaño Usados  Disp Uso% Montado en
+udev             3,9G      0  3,9G   0% /dev
+tmpfs            789M   9,5M  780M   2% /run
+/dev/sda3        706G   229G  441G  35% /
+tmpfs            3,9G   220K  3,9G   1% /dev/shm
+tmpfs            5,0M   4,0K  5,0M   1% /run/lock
+tmpfs            3,9G      0  3,9G   0% /sys/fs/cgroup
+tmpfs            789M    56K  789M   1% /run/user/1001
+4,0K	./e-2019-08-23_15_40
+20K	.
+total 24
+drwxrwxr-x  3 usuario usuario 4096 ago 23 15:40 .
+drwxr-xr-x 39 usuario usuario 4096 ago 23 14:40 ..
+drwxrwxr-x  2 usuario usuario 4096 ago 23 15:40 e-2019-08-23_15_40
+-rwxrw-r--  1 usuario usuario  184 ago 23 15:38 ejemplo
+-rwxrw-r--  1 usuario usuario  956 ago 23 15:40 miScript
+-rw-rw-r--  1 usuario usuario  613 ago 23 15:40 resultado

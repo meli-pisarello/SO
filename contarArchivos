@@ -1,0 +1,48 @@
+#!/bin/bash
+
+function askDir() {
+	while true; do
+		echo -n "Ingrese el directorio a buscar: "
+		read directorio		
+		if [ -d $directorio ]; then 
+			return
+		else
+			echo "::: El directorio ingresado no existe :::"
+		fi
+	done
+}
+
+askDir
+
+echo -n "Desea que sea recursivo? (S/N): "
+read recursion
+
+cantArch=0
+cantDir=0
+cantEx=0
+
+cd $directorio
+
+if [ "$recursion" == "S" ]; then 
+	lista="$(find ./*)"
+else
+	lista="$(ls .)"
+fi
+
+for i in $lista; do
+	if [ -f $i ]; then
+	cantArch=$(($cantArch+1))
+	fi
+	if [ -d $i ]; then
+		cantDir=$(($cantDir+1))
+	fi
+	if [ -x $i ]; then
+		cantEx=$(($cantEx+1))
+	fi
+done
+
+echo -e "--------------------------------------------"
+echo "Total de archivos: $cantArch"
+echo "Total de directorios: $cantDir"
+echo "Total de ejecutables: $cantEx"
+

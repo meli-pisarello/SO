@@ -1,0 +1,60 @@
+#!/bin/bash
+
+function crearDir(){
+	while true
+	do
+		echo -n "ingrese nombre de directorio a crear:"
+		read nuevodirectorio
+		if [ -d $nuevodirectorio ]; then 
+				echo "::: El directorio ya existe :::"
+		else 
+			mkdir $nuevodirectorio
+			if [ $? -eq 0 ]; then
+				echo "el directorio $nuevodirectorio fue creado, presione enter para volver al menu"
+				#ls -la . | grep $nuevodirectorio
+				exit 0
+			fi
+			
+		fi
+	done
+}
+
+function borrarDir(){
+	while true
+	do
+		echo -n "ingrese nombre de directorio a borrar:"
+		read eliminardirectorio
+		if [ -d $eliminardirectorio ]; then 
+			rm $eliminardirectorio
+			if [ $? -eq 0 ]; then
+				echo "El directorio $eliminardirectorio fue eliminado, presione enter para volver al menu"
+				#ls -la . | grep $nuevodirectorio
+				exit 0
+			fi
+		else 
+			echo "::: El directorio no existe :::"
+		fi
+	done
+}
+
+while true
+do
+	echo -e "--------------------------------------------"
+	echo -e "MENU PRINCIPAL  \t"
+	echo -e "\t  1. Contar archivos de un directorio  "
+	echo -e "\t  2. Listar directorio de trabajo  "
+	echo -e "\t  3. Crear directorio nuevo  "
+	echo -e "\t  4. Borrar directorio  "
+	echo -e "\t  4. salir  "
+	echo -e "--------------------------------------------"
+	read -p "Ingrese la opcion:" opcion
+	echo -e "--------------------------------------------"
+	case $opcion in
+		1) ;;
+		2)who;tty;uname;read;;
+		3)crearDir;read;;
+		4)borrarDir;read;;
+		5)exit 0;;
+		*)echo "opcion incorrecta";;
+	esac
+done

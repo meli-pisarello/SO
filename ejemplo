@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "mi primer script" > resultado
+date >> resultado
+uname -a >> resultado
+echo "espacio en disco" >> resultado
+df -h >> resultado
+du -h >> resultado
+
+ls -la >> resultado

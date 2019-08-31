@@ -1,0 +1,37 @@
+#!/bin/bash
+
+function creaDir(){
+	echo "mi segundo script"
+	date
+	echo "ingrese nombre de directorio:"
+	read directorio
+	mkdir $directorio-$(date +%Y-%m-%d_%H_%M)
+	echo "el directorio fue creado con exito"
+	
+	cd $directorio-$(date +%Y-%m-%d_%H_%M)
+	echo "ingrese nombre archivo:"
+	read archivo
+	touch $archivo-{0..9}
+	cd ..
+	echo "archivos creados con exito, presione enter para volver al menu"
+}
+while true
+do
+	echo -e "--------------------------------------------"
+	echo -e "MENU USUARIO  \t"
+	echo -e "\t  1. crear directorio  "
+	echo -e "\t  2. quien esta conectado  "
+	echo -e "\t  3. Ejemplo.sh  "
+	echo -e "\t  4. salir  "
+	echo -e "--------------------------------------------"
+	echo -e "Ingrese la opcion:"
+	read opcion
+	echo -e "--------------------------------------------"
+	case $opcion in
+		1)creaDir;read;;
+		2)who;tty;uname;read;;
+		3)./ejemplo;echo "script ejecutado con exito";read;;
+		4)exit 0;;
+		*)echo "opcion incorrecta";;
+	esac
+done
